@@ -6,9 +6,23 @@
  * EXAMPLE
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
+
+//acc is acumulator and curr is current 
 function trimProperties(obj) {
-  // ✨ implement
+  return Object.keys(obj).reduce((acc, curr) => {
+    acc[curr] = obj[curr].trim()
+    return acc;
+  }, {});
 }
+
+// ------ BY LOOPING THROUGH --------
+// function trimProperties(obj) {
+//   const result = { }
+//   for(let key in obj) {
+//     result[key] = obj[key].trim();
+//   }
+//   return result
+// }
 
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
@@ -18,8 +32,20 @@ function trimProperties(obj) {
  * EXAMPLE
  * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
  */
+// function trimPropertiesMutation(obj) {
+//   return Object.keys(obj).reduce((acc, curr) => {
+//     acc[curr] = obj[curr].trim()
+//     return acc;
+//   }, {});
+// }
+
+// ------ BY LOOPING THROUGH --------
 function trimPropertiesMutation(obj) {
-  // ✨ implement
+  const result = { }
+  for (let properties in obj) {
+    obj[properties] = obj[properties].trim()
+  }
+  return result
 }
 
 /**
