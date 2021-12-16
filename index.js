@@ -41,11 +41,11 @@ function trimProperties(obj) {
 
 // ------ BY LOOPING THROUGH --------
 function trimPropertiesMutation(obj) {
-  const result = { }
+  // const result = { }
   for (let properties in obj) {
     obj[properties] = obj[properties].trim()
   }
-  return result
+  return obj
 }
 
 /**
